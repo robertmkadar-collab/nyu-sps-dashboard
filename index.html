@@ -133,6 +133,37 @@
     background: var(--gray-200);
   }
 
+  /* ── Funnel Intro Narrative ── */
+  .funnel-narrative {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    padding: 18px 24px;
+    margin-bottom: 14px;
+    border-left: 4px solid var(--navy);
+    font-size: 14px;
+    color: var(--gray-700);
+    line-height: 1.6;
+  }
+  .funnel-narrative strong { color: var(--navy-dark); }
+
+  /* ── Conversion Rate Badges ── */
+  .kpi-conversion {
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gray-500);
+  }
+  .kpi-conversion .conv-value {
+    display: inline-block;
+    background: var(--gray-100);
+    padding: 1px 7px;
+    border-radius: 8px;
+    font-weight: 700;
+    color: var(--gray-700);
+    margin-left: 2px;
+  }
+
   /* ── KPI Cards Row ── */
   .kpi-row {
     display: grid;
@@ -1021,6 +1052,9 @@
 
   <!-- ════ ENROLLMENT FUNNEL ════ -->
   <div class="section-header">Enrollment Funnel</div>
+  <div class="funnel-narrative">
+    With <strong id="narrativeDays"></strong> days until classes begin, the upper funnel is outperforming Fall '25 across the board — started applications are up 15%, completions up 8%, and admits up 9%. However, <strong>deposits and registrations are trailing last year</strong>, sitting at 52 and 38 respectively against a 75-seat goal. The conversion rate from admitted to deposited is 58%, below last cycle's 71%. The priority for the remaining weeks is clear: <strong>yield, not lead generation</strong> — every admitted student who doesn't deposit represents the most expensive lost opportunity in the funnel.
+  </div>
   <div class="kpi-row">
     <div class="kpi-card">
       <div class="kpi-icon">📝</div>
@@ -1037,6 +1071,7 @@
       <div class="kpi-label">Submitted</div>
       <div class="kpi-value">134</div>
       <div class="kpi-desc">Total submitted applications</div>
+      <div class="kpi-conversion">From started → <span class="conv-value">71.7%</span></div>
       <div class="kpi-yoy">
         <span class="yoy-last">Fall '25: 118</span>
         <span class="yoy-badge up">▲ 14%</span>
@@ -1047,6 +1082,7 @@
       <div class="kpi-label">Completed</div>
       <div class="kpi-value">112</div>
       <div class="kpi-desc">Total completed applications</div>
+      <div class="kpi-conversion">From submitted → <span class="conv-value">83.6%</span></div>
       <div class="kpi-yoy">
         <span class="yoy-last">Fall '25: 104</span>
         <span class="yoy-badge up">▲ 8%</span>
@@ -1057,6 +1093,7 @@
       <div class="kpi-label">Admitted</div>
       <div class="kpi-value">89</div>
       <div class="kpi-desc">Total admitted applicants</div>
+      <div class="kpi-conversion">From completed → <span class="conv-value">79.5%</span></div>
       <div class="kpi-yoy">
         <span class="yoy-last">Fall '25: 82</span>
         <span class="yoy-badge up">▲ 9%</span>
@@ -1067,6 +1104,7 @@
       <div class="kpi-label">Deposited</div>
       <div class="kpi-value">52</div>
       <div class="kpi-desc">Total deposited students</div>
+      <div class="kpi-conversion">From admitted → <span class="conv-value">58.4%</span></div>
       <div class="kpi-yoy">
         <span class="yoy-last">Fall '25: 58</span>
         <span class="yoy-badge down">▼ 10%</span>
@@ -1077,6 +1115,7 @@
       <div class="kpi-label">Registered</div>
       <div class="kpi-value">38</div>
       <div class="kpi-desc">Total registered for classes</div>
+      <div class="kpi-conversion">From deposited → <span class="conv-value">73.1%</span></div>
       <div class="kpi-yoy">
         <span class="yoy-last">Fall '25: 44</span>
         <span class="yoy-badge down">▼ 14%</span>
@@ -1147,11 +1186,43 @@
       </div>
       <div class="budget-bar-wrap">
         <div class="budget-bar-label">
-          <span>Cost per Deposit: $1,508</span>
-          <span>Cost per App: $585</span>
+          <span>65% of budget spent</span>
+          <span>69% of enrollment goal reached</span>
         </div>
         <div class="budget-bar-track">
           <div class="budget-bar-fill" style="width: 100%; background: linear-gradient(90deg, var(--green), #4CAF80);"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="budget-row" style="margin-top:14px;">
+    <div class="budget-card">
+      <div class="budget-info">
+        <div class="budget-label">Cost Per Application</div>
+        <div class="budget-value">$419</div>
+      </div>
+      <div class="budget-bar-wrap">
+        <div class="budget-bar-label">
+          <span>$78,400 spend ÷ 187 started apps</span>
+          <span>Fall '25: $472</span>
+        </div>
+        <div class="budget-bar-track">
+          <div class="budget-bar-fill" style="width: 56%; background: linear-gradient(90deg, var(--navy), var(--navy-light));"></div>
+        </div>
+      </div>
+    </div>
+    <div class="budget-card">
+      <div class="budget-info">
+        <div class="budget-label">Cost Per Enroll</div>
+        <div class="budget-value">$2,063</div>
+      </div>
+      <div class="budget-bar-wrap">
+        <div class="budget-bar-label">
+          <span>$78,400 spend ÷ 38 registered</span>
+          <span>Fall '25: $1,740</span>
+        </div>
+        <div class="budget-bar-track">
+          <div class="budget-bar-fill" style="width: 72%; background: linear-gradient(90deg, #C0392B, #E74C3C);"></div>
         </div>
       </div>
     </div>
@@ -1908,6 +1979,7 @@ const today = new Date();
 const diffTime = semesterStart - today;
 const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 document.getElementById('daysLeft').textContent = diffDays > 0 ? diffDays : 0;
+document.getElementById('narrativeDays').textContent = diffDays > 0 ? diffDays : 0;
 
 const months = ['May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr'];
 const navy = '#57068C';
