@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -135,7 +136,7 @@
   /* ── KPI Cards Row ── */
   .kpi-row {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 14px;
   }
   .kpi-card {
@@ -742,6 +743,125 @@
     margin-top: 4px;
   }
 
+  /* ── Best Performing Audiences ── */
+  .audiences-section {}
+  .audience-platform {
+    margin-bottom: 18px;
+  }
+  .audience-platform-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding: 10px 16px;
+    background: var(--gray-50);
+    border-radius: 8px;
+    border-left: 4px solid var(--navy);
+  }
+  .audience-platform-header h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gray-900);
+  }
+  .audience-cards-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 14px;
+  }
+  .audience-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+    overflow: hidden;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .audience-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  .audience-card-top {
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .audience-card-rank {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .audience-card-top h5 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .audience-type-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .audience-type-tag.adset { background: #E3F2FD; color: #1565C0; }
+  .audience-type-tag.adgroup { background: #FFF3E0; color: #E65100; }
+  .audience-card-desc {
+    font-size: 12px;
+    color: var(--gray-500);
+    line-height: 1.45;
+    margin-bottom: 8px;
+  }
+  .audience-size {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-700);
+  }
+  .audience-size .size-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--navy);
+    opacity: 0.5;
+  }
+  .audience-kpis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 2px solid var(--navy);
+    background: var(--gray-50);
+  }
+  .audience-kpi {
+    text-align: center;
+    padding: 10px 6px;
+    border-right: 1px solid var(--gray-200);
+  }
+  .audience-kpi:last-child { border-right: none; }
+  .audience-kpi .aud-kpi-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy-dark);
+  }
+  .audience-kpi .aud-kpi-label {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--gray-500);
+    margin-top: 2px;
+  }
+
   /* ── Activities Checklist ── */
   .activities-card {
     background: var(--white);
@@ -952,6 +1072,16 @@
         <span class="yoy-badge down">▼ 10%</span>
       </div>
     </div>
+    <div class="kpi-card">
+      <div class="kpi-icon">📋</div>
+      <div class="kpi-label">Registered</div>
+      <div class="kpi-value">38</div>
+      <div class="kpi-desc">Total registered for classes</div>
+      <div class="kpi-yoy">
+        <span class="yoy-last">Fall '25: 44</span>
+        <span class="yoy-badge down">▼ 14%</span>
+      </div>
+    </div>
   </div>
 
   <!-- ════ COUNTDOWN & ENROLLMENT GOAL ════ -->
@@ -1055,19 +1185,20 @@
           <th>Completed</th>
           <th>Admitted</th>
           <th>Deposited</th>
+          <th>Registered</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Paid Social</td><td>4,210</td><td>312</td><td>68</td><td>51</td><td>42</td><td>34</td><td>19</td></tr>
-        <tr><td>Organic Social</td><td>1,840</td><td>98</td><td>22</td><td>16</td><td>14</td><td>11</td><td>6</td></tr>
-        <tr><td>Organic Search</td><td>3,620</td><td>187</td><td>41</td><td>30</td><td>26</td><td>20</td><td>12</td></tr>
-        <tr><td>Direct</td><td>1,430</td><td>74</td><td>18</td><td>13</td><td>10</td><td>8</td><td>5</td></tr>
-        <tr><td>Email</td><td>2,180</td><td>156</td><td>24</td><td>16</td><td>13</td><td>10</td><td>6</td></tr>
-        <tr><td>AI Referral</td><td>680</td><td>32</td><td>8</td><td>5</td><td>4</td><td>3</td><td>2</td></tr>
-        <tr><td>Import List</td><td>340</td><td>41</td><td>6</td><td>3</td><td>3</td><td>3</td><td>2</td></tr>
+        <tr><td>Paid Social</td><td>4,210</td><td>312</td><td>68</td><td>51</td><td>42</td><td>34</td><td>19</td><td>14</td></tr>
+        <tr><td>Organic Social</td><td>1,840</td><td>98</td><td>22</td><td>16</td><td>14</td><td>11</td><td>6</td><td>4</td></tr>
+        <tr><td>Organic Search</td><td>3,620</td><td>187</td><td>41</td><td>30</td><td>26</td><td>20</td><td>12</td><td>9</td></tr>
+        <tr><td>Direct</td><td>1,430</td><td>74</td><td>18</td><td>13</td><td>10</td><td>8</td><td>5</td><td>3</td></tr>
+        <tr><td>Email</td><td>2,180</td><td>156</td><td>24</td><td>16</td><td>13</td><td>10</td><td>6</td><td>5</td></tr>
+        <tr><td>AI Referral</td><td>680</td><td>32</td><td>8</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td></tr>
+        <tr><td>Import List</td><td>340</td><td>41</td><td>6</td><td>3</td><td>3</td><td>3</td><td>2</td><td>2</td></tr>
       </tbody>
       <tfoot>
-        <tr><td>Total</td><td>14,300</td><td>900</td><td>187</td><td>134</td><td>112</td><td>89</td><td>52</td></tr>
+        <tr><td>Total</td><td>14,300</td><td>900</td><td>187</td><td>134</td><td>112</td><td>89</td><td>52</td><td>38</td></tr>
       </tfoot>
     </table>
   </div>
@@ -1284,7 +1415,270 @@
     </div>
 
   </div>
-  <div class="section-header">Marketing &amp; Admissions Activities</div>
+  <!-- ════ BEST PERFORMING AUDIENCES ════ -->
+  <div class="section-header">Best Performing Audiences</div>
+  <div class="audiences-section">
+
+    <!-- Meta Ad Sets -->
+    <div class="audience-platform">
+      <div class="audience-platform-header">
+        <div class="channel-icon meta">f</div>
+        <h4>Meta — Top Ad Sets</h4>
+      </div>
+      <div class="audience-cards-row">
+
+        <div class="audience-card">
+          <div class="audience-card-top">
+            <div class="audience-card-rank">1</div>
+            <span class="audience-type-tag adset">Ad Set</span>
+            <h5>Working Professionals 28–45 | Career Changers</h5>
+            <div class="audience-card-desc">Interest-based targeting: career development, professional certifications, online education, MBA programs. Combined with behaviors: engaged shoppers, frequent travelers, technology early adopters. Ages 28–45, US-based, excluding current students.</div>
+            <div class="audience-size"><span class="size-dot"></span> Audience size: 2.4M – 2.8M people</div>
+          </div>
+          <div class="audience-kpis">
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">4.1%</div>
+              <div class="aud-kpi-label">CTR</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">$3.80</div>
+              <div class="aud-kpi-label">CPC</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">18</div>
+              <div class="aud-kpi-label">Ad-Attr. Apps</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">$542</div>
+              <div class="aud-kpi-label">Cost / App</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="audience-card">
+          <div class="audience-card-top">
+            <div class="audience-card-rank">2</div>
+            <span class="audience-type-tag adset">Ad Set</span>
+            <h5>Lookalike 1% — Past Applicants</h5>
+            <div class="audience-card-desc">1% lookalike audience built from all NYU SPS applicants in the last 24 months. Meta's algorithm identifies users with similar demographics, online behaviors, and interests to past applicants. Broad US targeting, ages 24–50.</div>
+            <div class="audience-size"><span class="size-dot"></span> Audience size: 2.1M – 2.5M people</div>
+          </div>
+          <div class="audience-kpis">
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">3.4%</div>
+              <div class="aud-kpi-label">CTR</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">$4.50</div>
+              <div class="aud-kpi-label">CPC</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">12</div>
+              <div class="aud-kpi-label">Ad-Attr. Apps</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">$718</div>
+              <div class="aud-kpi-label">Cost / App</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="audience-card">
+          <div class="audience-card-top">
+            <div class="audience-card-rank">3</div>
+            <span class="audience-type-tag adset">Ad Set</span>
+            <h5>Website Retargeting — Program Page Visitors</h5>
+            <div class="audience-card-desc">Custom audience of users who visited NYU SPS continuing education program pages in the last 60 days but did not start an application. Pixel-based retargeting with frequency cap of 3 impressions per day.</div>
+            <div class="audience-size"><span class="size-dot"></span> Audience size: 18K – 24K people</div>
+          </div>
+          <div class="audience-kpis">
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">5.8%</div>
+              <div class="aud-kpi-label">CTR</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">$2.90</div>
+              <div class="aud-kpi-label">CPC</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">8</div>
+              <div class="aud-kpi-label">Ad-Attr. Apps</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">$385</div>
+              <div class="aud-kpi-label">Cost / App</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Google Ad Groups -->
+    <div class="audience-platform">
+      <div class="audience-platform-header">
+        <div class="channel-icon google">G</div>
+        <h4>Google Search — Top Ad Groups</h4>
+      </div>
+      <div class="audience-cards-row">
+
+        <div class="audience-card">
+          <div class="audience-card-top">
+            <div class="audience-card-rank">1</div>
+            <span class="audience-type-tag adgroup">Ad Group</span>
+            <h5>Branded — "NYU Continuing Education"</h5>
+            <div class="audience-card-desc">Exact and phrase match keywords: "NYU continuing education," "NYU SPS certificates," "NYU professional studies programs." Targets users with high purchase intent who are already aware of the NYU SPS brand. All US geographies.</div>
+            <div class="audience-size"><span class="size-dot"></span> Monthly search volume: 8,200 – 12,400</div>
+          </div>
+          <div class="audience-kpis">
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">6.4%</div>
+              <div class="aud-kpi-label">CTR</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">$5.60</div>
+              <div class="aud-kpi-label">CPC</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">10</div>
+              <div class="aud-kpi-label">Ad-Attr. Apps</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">$780</div>
+              <div class="aud-kpi-label">Cost / App</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="audience-card">
+          <div class="audience-card-top">
+            <div class="audience-card-rank">2</div>
+            <span class="audience-type-tag adgroup">Ad Group</span>
+            <h5>Non-Branded — "Online Certificate Programs NYC"</h5>
+            <div class="audience-card-desc">Broad and phrase match keywords: "online certificate programs NYC," "continuing education New York," "professional development courses online," "evening classes for adults." Captures prospecting intent from users exploring options. US Northeast geo-targeted.</div>
+            <div class="audience-size"><span class="size-dot"></span> Monthly search volume: 22,000 – 31,000</div>
+          </div>
+          <div class="audience-kpis">
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">3.1%</div>
+              <div class="aud-kpi-label">CTR</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">$9.20</div>
+              <div class="aud-kpi-label">CPC</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">7</div>
+              <div class="aud-kpi-label">Ad-Attr. Apps</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">$1,340</div>
+              <div class="aud-kpi-label">Cost / App</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="audience-card">
+          <div class="audience-card-top">
+            <div class="audience-card-rank">3</div>
+            <span class="audience-type-tag adgroup">Ad Group</span>
+            <h5>Competitor — "Columbia Continuing Ed Alternatives"</h5>
+            <div class="audience-card-desc">Phrase and broad match keywords targeting competitor searches: "Columbia continuing education," "best certificate programs NYC," "NYU vs Columbia professional studies." Captures users comparing options across top NYC institutions.</div>
+            <div class="audience-size"><span class="size-dot"></span> Monthly search volume: 5,400 – 8,100</div>
+          </div>
+          <div class="audience-kpis">
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">2.6%</div>
+              <div class="aud-kpi-label">CTR</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">$11.40</div>
+              <div class="aud-kpi-label">CPC</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">5</div>
+              <div class="aud-kpi-label">Ad-Attr. Apps</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">$1,560</div>
+              <div class="aud-kpi-label">Cost / App</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="audience-platform">
+      <div class="audience-platform-header">
+        <div class="channel-icon linkedin">in</div>
+        <h4>LinkedIn — Top Ad Sets</h4>
+      </div>
+      <div class="audience-cards-row">
+
+        <div class="audience-card">
+          <div class="audience-card-top">
+            <div class="audience-card-rank">1</div>
+            <span class="audience-type-tag adset">Ad Set</span>
+            <h5>Mid-Career Professionals | Manager+ Seniority</h5>
+            <div class="audience-card-desc">Job seniority: Manager, Director, VP. Industries: marketing, finance, consulting, technology. Skills: project management, data analytics, digital marketing, strategic planning. 5–15 years experience. US-based, excluding current students and educators.</div>
+            <div class="audience-size"><span class="size-dot"></span> Audience size: 1.8M – 2.2M members</div>
+          </div>
+          <div class="audience-kpis">
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">1.4%</div>
+              <div class="aud-kpi-label">CTR</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">$13.20</div>
+              <div class="aud-kpi-label">CPC</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">5</div>
+              <div class="aud-kpi-label">Ad-Attr. Apps</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">$1,880</div>
+              <div class="aud-kpi-label">Cost / App</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="audience-card">
+          <div class="audience-card-top">
+            <div class="audience-card-rank">2</div>
+            <span class="audience-type-tag adset">Ad Set</span>
+            <h5>Recent Bachelor's Grads | Skill Upskilling Intent</h5>
+            <div class="audience-card-desc">Members who graduated with a Bachelor's degree in the last 1–4 years. Interest traits: online learning, professional certifications, career advancement. Industries: all. Ages 22–30, tri-state area + major US metros.</div>
+            <div class="audience-size"><span class="size-dot"></span> Audience size: 820K – 1.1M members</div>
+          </div>
+          <div class="audience-kpis">
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">1.1%</div>
+              <div class="aud-kpi-label">CTR</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">$16.40</div>
+              <div class="aud-kpi-label">CPC</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">3</div>
+              <div class="aud-kpi-label">Ad-Attr. Apps</div>
+            </div>
+            <div class="audience-kpi">
+              <div class="aud-kpi-value">$2,360</div>
+              <div class="aud-kpi-label">Cost / App</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ════ MARKETING &amp; ADMISSIONS ACTIVITIES ════ -->
   <div class="activities-card">
     <h3>Funnel Growth &amp; Yield Activities</h3>
     <p class="act-subtitle">Checklist of completed and upcoming activities to grow and yield the Fall 2026 Continuing Education Programs enrollment funnel.</p>
